@@ -7,22 +7,15 @@ export default function Contact() {
   const route = useRoute();
   const navigation = useNavigation();
 
-  const handleHome = () => {
-    navigation.dispatch(StackActions.popToTop());
-  };
+
 
   return (
     <View style={styles.container}>
       <Text style={styles.text}>Contact</Text>
+        <Text style={styles.text}>Eai {route.params?.name}</Text>
       <TouchableOpacity
         style={styles.button}
-        onPress={() => navigation.navigate("Contact")}
-      >
-        <Text style={styles.buttonText}>Eai {route.params?.name}</Text>
-      </TouchableOpacity>
-      <TouchableOpacity
-        style={styles.button}
-        onPress={handleHome}
+        onPress={() => navigation.navigate("Home")}
       >
         <Text style={styles.buttonText}>
           Já pá home maluco

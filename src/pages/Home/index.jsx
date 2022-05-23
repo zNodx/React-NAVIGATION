@@ -4,12 +4,12 @@ import { useNavigation } from "@react-navigation/native";
 
 export default function Home() {
   const navigation = useNavigation();
-  const toAbout = () => navigation.navigate("About", { name: "Mateus" });
+  const toDetails = () => navigation.navigate("Details", { name: "Mateus" });
   return (
     <View style={styles.container}>
       <Text style={styles.text}>Home</Text>
-      <TouchableOpacity style={styles.button} onPress={toAbout}>
-        <Text style={styles.buttonText}>Go to About</Text>
+      <TouchableOpacity style={styles.button} onPress={toDetails}>
+        <Text style={styles.buttonText}>Go to Details</Text>
       </TouchableOpacity>
     </View>
   );
