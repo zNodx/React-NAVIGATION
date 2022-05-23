@@ -5,11 +5,11 @@ import {useNavigation} from "@react-navigation/native";
 export default function Home() {
 
     const navigation = useNavigation();
-
+    const toAbout = () => navigation.navigate('About', {name: 'Mateus'});
     return(
         <View style={styles.container}> 
             <Text style={styles.text}>Home</Text>
-            <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('About')}>
+            <TouchableOpacity style={styles.button} onPress={toAbout}>
                 <Text style={styles.buttonText}>Go to Login</Text>
             </TouchableOpacity> 
         </View>

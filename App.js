@@ -13,14 +13,7 @@ export default function App(){
           name="Home" 
           component={Home} 
           options={{
-            title: 'Tela inical', 
-            headerStyle:{
-              backgroundColor: '#f4511e'
-            },
-            headerTintColor: '#fff',
-            headerTitleStyle: {
-              fontWeight: 'bold'
-            }
+            headerShown: false
           }} 
           />
         <Stack.Screen 
@@ -28,10 +21,6 @@ export default function App(){
           component={About}
           options={{
             title: 'Sobre',
-            headerStyle:{
-              backgroundColor: '#f4511e'
-            },
-            headerTintColor: '#fff',
             headerTitleStyle: {
               fontWeight: 'bold'
             }
