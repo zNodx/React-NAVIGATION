@@ -1,34 +1,31 @@
-import React, { useLayoutEffect } from "react";
-import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
-import { useNavigation, useRoute } from "@react-navigation/native";
+import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
+import { useNavigation, useRoute, StackActions } from "@react-navigation/native";
 
-export default function About() {
+import React from "react";
+
+export default function Contact() {
   const route = useRoute();
   const navigation = useNavigation();
 
-  useLayoutEffect(() => {
-    navigation.setOptions({
-      title: "About " + route.params?.name || "",
-    });
-  }, [navigation]);
+  const handleHome = () => {
+    navigation.dispatch(StackActions.popToTop());
+  };
 
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>About</Text>
+      <Text style={styles.text}>Contact</Text>
       <TouchableOpacity
         style={styles.button}
-        onPress={() =>
-          navigation.navigate("Contact", { name: route.params?.name })
-        }
+        onPress={() => navigation.navigate("Contact")}
       >
-        <Text style={styles.buttonText}>Go to contact of {route.params?.name}</Text>
+        <Text style={styles.buttonText}>Eai {route.params?.name}</Text>
       </TouchableOpacity>
       <TouchableOpacity
         style={styles.button}
-        onPress={() => navigation.goBack()}
+        onPress={handleHome}
       >
         <Text style={styles.buttonText}>
-          Já vai meu chapa {route.params?.name}?
+          Já pá home maluco
         </Text>
       </TouchableOpacity>
     </View>
