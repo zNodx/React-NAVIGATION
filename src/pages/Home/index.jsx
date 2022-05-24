@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
+import { View, Text, StyleSheet, TouchableOpacity, Button} from "react-native";
 import { useNavigation } from "@react-navigation/native";
 
 export default function Home() {
@@ -11,6 +11,7 @@ export default function Home() {
       <TouchableOpacity style={styles.button} onPress={toDetails}>
         <Text style={styles.buttonText}>Go to Details</Text>
       </TouchableOpacity>
+      <Button title="Open Draews" onPress={() => navigation.openDrawer()} />
     </View>
   );
 }
